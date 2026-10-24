@@ -109,13 +109,13 @@ const PORTFOLIO_CONFIG = {
   },
 
   // Firebase Firestore Database Configuration
-  // Create a free project at https://console.firebase.google.com and paste your config here:
   firebase: {
-    apiKey: "YOUR_API_KEY",
-    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-    projectId: "YOUR_PROJECT_ID",
-    storageBucket: "YOUR_PROJECT_ID.appspot.com",
-    messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-    appId: "YOUR_APP_ID"
+    apiKey: "AIzaSyDbo5w7CpOeSQdi10KPeUaJRjIJKixxjsY",
+    authDomain: "zohaib-portfolio-21a57.firebaseapp.com",
+    projectId: "zohaib-portfolio-21a57",
+    storageBucket: "zohaib-portfolio-21a57.firebasestorage.app",
+    messagingSenderId: "918523280776",
+    appId: "1:918523280776:web:70435869b96a95b6c1ce3d",
+    measurementId: "G-P9F965355S"
   }
 };
