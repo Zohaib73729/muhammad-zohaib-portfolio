@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Muhammad Zohaib — Frontend Developer &amp; BSCS Student</title>
+  
+  <!-- SEO & OpenGraph Meta Tags -->
+  <meta name="description" content="Portfolio of Muhammad Zohaib — Frontend Developer and BS Computer Science student (4th Semester) at COMSATS University Islamabad, Sahiwal Campus. Explore projects, skills, and academic coursework.">
+  <meta name="author" content="Muhammad Zohaib">
+  <meta name="keywords" content="Muhammad Zohaib, Frontend Developer, Web Engineer, BSCS, COMSATS Sahiwal, AgroMart, Weather App, HTML5, CSS3, JavaScript, React">
+  
+  <meta property="og:title" content="Muhammad Zohaib — Frontend Developer Portfolio">
+  <meta property="og:description" content="Modern, responsive developer portfolio showcasing frontend web engineering, academic coursework, and interactive projects.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="assets/images/zohaib-portrait.jpg">
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <!-- Ambient Glowing Background Elements -->
+  <div class="ambient-glow-bg" aria-hidden="true">
+    <div class="ambient-orb ambient-orb-1"></div>
+    <div class="ambient-orb ambient-orb-2"></div>
+    <div class="ambient-orb ambient-orb-3"></div>
+  </div>
+
+  <!-- ========================================================================
+       A. NAVIGATION BAR
+       ======================================================================== -->
+  <header class="site-header" id="site-header">
+    <div class="container nav-container">
+      
+      <!-- Brand Logo / Monogram -->
+      <a href="#hero" class="logo-link" aria-label="Muhammad Zohaib — Back to Top">
+        <div class="mz-logo-badge">MZ</div>
+        <div class="logo-text">
+          <span class="logo-name">Muhammad Zohaib</span>
+          <span class="logo-sub">Frontend Developer</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Menu -->
+      <nav class="nav-menu" aria-label="Main Navigation">
+        <a href="#hero" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Nav Actions (Theme Toggle & Mobile Trigger) -->
+      <div class="nav-actions">
+        <!-- Dark / Light Theme Toggle -->
+        <button id="theme-toggle-btn" class="theme-toggle-btn" aria-label="Switch theme mode" title="Toggle theme">
+          <!-- Sun Icon (Shows in dark mode to switch to light) -->
+          <svg class="theme-icon-sun" viewBox="0 0 24 24">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <!-- Moon Icon (Shows in light mode to switch to dark) -->
+          <svg class="theme-icon-moon" viewBox="0 0 24 24">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Mobile Hamburger Button -->
+        <button id="mobile-nav-toggle" class="mobile-nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <aside id="mobile-nav-drawer" class="mobile-nav-drawer" aria-label="Mobile Navigation">
+    <div class="mobile-nav-links">
+      <a href="#hero" class="mobile-nav-link active">Home <span>→</span></a>
+      <a href="#about" class="mobile-nav-link">About <span>→</span></a>
+      <a href="#skills" class="mobile-nav-link">Skills <span>→</span></a>
+      <a href="#projects" class="mobile-nav-link">Projects <span>→</span></a>
+      <a href="#education" class="mobile-nav-link">Education <span>→</span></a>
+      <a href="#contact" class="mobile-nav-link">Contact <span>→</span></a>
+    </div>
+    <div style="margin-top: auto; padding-top: 24px; border-top: 1px solid var(--border-subtle); display: flex; justify-content: space-between; align-items: center;">
+      <span style="font-size: 0.9rem; font-weight: 600; color: var(--text-secondary);">Toggle Theme</span>
+      <button id="mobile-theme-toggle-btn" class="theme-toggle-btn" aria-label="Switch theme">
+        <svg class="theme-icon-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        <svg class="theme-icon-moon" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      </button>
+    </div>
+  </aside>
+  <div id="mobile-nav-overlay" class="mobile-nav-overlay" aria-hidden="true"></div>
+
+  <!-- ========================================================================
+       B. HERO SECTION
+       ======================================================================== -->
+  <section class="hero-section" id="hero">
+    <div class="container hero-grid">
+      
+      <!-- Left Column: Content & Intros -->
+      <div class="hero-content">
+        <!-- Eyebrow Badge -->
+        <div class="hero-greeting-badge">
+          <span class="pulse-dot"></span>
+          <span>Hello, I'm</span>
+        </div>
+
+        <h1 class="hero-name">Muhammad Zohaib</h1>
+
+        <!-- Professional Title with Dynamic Role -->
+        <div class="hero-title-wrapper">
+          <span class="hero-title" id="hero-rotating-role">Frontend Developer</span>
+        </div>
+
+        <!-- Short Natural Introduction -->
+        <p class="hero-bio">
+          I am a <strong>BS Computer Science (4th Semester)</strong> student at <strong>COMSATS University Islamabad, Sahiwal Campus</strong>. Passionate about engineering clean, responsive, and user-friendly web applications, combining algorithmic principles with modern frontend design.
+        </p>
+
+        <!-- CTA Action Buttons -->
+        <div class="hero-cta-group">
+          <a href="#projects" class="btn btn-primary">
+            <span>View My Projects</span>
+            <svg class="btn-icon btn-icon-arrow" viewBox="0 0 24 24">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+          <a href="#contact" class="btn btn-secondary">
+            <span>Contact Me</span>
+            <svg class="btn-icon" viewBox="0 0 24 24">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </a>
+        </div>
+
+        <!-- Social Media Icons Row -->
+        <div class="hero-social-block">
+          <span class="social-label">Connect with me:</span>
+          <div class="social-icons-row">
+            <!-- GitHub -->
+            <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub Profile" title="GitHub">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+            </a>
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn Profile" title="LinkedIn">
+              <svg viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+            </a>
+            <!-- YouTube -->
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="YouTube Channel" title="YouTube">
+              <svg viewBox="0 0 24 24">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+            </a>
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Facebook Profile" title="Facebook">
+              <svg viewBox="0 0 24 24">
+                <path d="M22.675 0h-21.35C.597 0 0 .597 0 1.326v21.348C0 23.403.597 24 1.326 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.597 1.323-1.326V1.326C24 .597 23.403 0 22.675 0z"/>
+              </svg>
+            </a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram Profile" title="Instagram">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+            <!-- TikTok -->
+            <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="TikTok Profile" title="TikTok">
+              <svg viewBox="0 0 24 24">
+                <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Muhammad Zohaib's Portrait in Modern Frame -->
+      <div class="hero-portrait-wrapper">
+        <div class="portrait-ambient-glow" aria-hidden="true"></div>
+
+        <!-- Floating Badge: Education Tag -->
+        <div class="portrait-floating-badge badge-top-left">
+          <div class="badge-icon-box">🎓</div>
+          <div>
+            <div style="font-size:0.7rem;color:var(--cyan-accent);text-transform:uppercase;">COMSATS Sahiwal</div>
+            <div>BSCS • 4th Semester</div>
+          </div>
+        </div>
+
+        <!-- Floating Badge: Tech Role -->
+        <div class="portrait-floating-badge badge-bottom-right">
+          <div class="badge-icon-box">💻</div>
+          <div>
+            <div style="font-size:0.7rem;color:var(--cyan-accent);text-transform:uppercase;">Specialization</div>
+            <div>Frontend Developer</div>
+          </div>
+        </div>
+
+        <!-- Portrait Card Container -->
+        <div class="portrait-card">
+          <div class="portrait-img-box">
+            <!-- Authentic Portrait of Muhammad Zohaib -->
+            <img src="assets/images/zohaib-portrait.jpg" alt="Muhammad Zohaib — Frontend Developer" class="portrait-img" loading="eager">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       C. ABOUT ME SECTION
+       ======================================================================== -->
+  <section id="about">
+    <div class="container">
+      
+      <div class="section-header">
+        <div class="section-eyebrow">✦ Discovery &amp; Motivation</div>
+        <h2 class="section-title">About <span class="gradient-text">Me</span></h2>
+        <p class="section-subtitle">Dedicated to mastering web engineering principles and translating creative ideas into responsive, accessible code.</p>
+      </div>
+
+      <div class="about-grid">
+        <!-- Left: Story & Pillars -->
+        <div class="about-card">
+          <p class="about-intro-text">
+            Hello! I'm <strong>Muhammad Zohaib</strong>, an aspiring Frontend Developer and undergraduate Computer Science student at <strong>COMSATS University Islamabad, Sahiwal Campus</strong>, currently in my <strong>4th Semester</strong>.
+          </p>
+          <p class="about-intro-text">
+            My development journey is focused on creating responsive, intuitive user interfaces and understanding how software architecture powers the web. Through my academic studies in Object-Oriented Programming, Data Structures, and Database Systems, paired with continuous hands-on frontend practice, I enjoy solving problems through clean code, structured layouts, and delightful interactive design.
+          </p>
+          <p class="about-intro-text">
+            I am always eager to learn evolving web standards, explore modern JavaScript and frontend tooling, and collaborate on real-world projects that demand attention to detail and user accessibility.
+          </p>
+
+          <!-- Core Pillars -->
+          <div class="pillars-grid">
+            <div class="pillar-item">
+              <div class="pillar-icon">🎨</div>
+              <h3 class="pillar-title">Responsive UI</h3>
+              <p class="pillar-desc">Mobile-first layouts, semantic markup, and fluid adaptability.</p>
+            </div>
+            <div class="pillar-item">
+              <div class="pillar-icon">⚡</div>
+              <h3 class="pillar-title">Problem Solving</h3>
+              <p class="pillar-desc">Algorithmic foundations and structured, logical thinking.</p>
+            </div>
+            <div class="pillar-item">
+              <div class="pillar-icon">🚀</div>
+              <h3 class="pillar-title">Continuous Growth</h3>
+              <p class="pillar-desc">Dedicated to learning modern tools, frameworks, and web APIs.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Verified Personal Information Cards -->
+        <div class="contact-info-panel">
+          <!-- Phone / WhatsApp -->
+          <a href="tel:03120640282" class="info-card" title="Call or Message via WhatsApp">
+            <div class="info-card-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+              </svg>
+            </div>
+            <div class="info-card-text">
+              <span class="info-card-label">Phone / WhatsApp</span>
+              <span class="info-card-value">0312-0640282</span>
+            </div>
+          </a>
+
+          <!-- Email -->
+          <a href="mailto:sp25-bcs-152@students.cuisahiwal" class="info-card" title="Send an Email">
+            <div class="info-card-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+            </div>
+            <div class="info-card-text">
+              <span class="info-card-label">Email Address</span>
+              <span class="info-card-value">sp25-bcs-152@students.cuisahiwal</span>
+            </div>
+          </a>
+
+          <!-- Location -->
+          <div class="info-card">
+            <div class="info-card-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+            </div>
+            <div class="info-card-text">
+              <span class="info-card-label">Location</span>
+              <span class="info-card-value">Sahiwal, Punjab, Pakistan</span>
+            </div>
+          </div>
+
+          <!-- Academic Institution -->
+          <div class="info-card">
+            <div class="info-card-icon">
+              <svg viewBox="0 0 24 24">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+              </svg>
+            </div>
+            <div class="info-card-text">
+              <span class="info-card-label">University</span>
+              <span class="info-card-value">COMSATS University Islamabad, Sahiwal Campus</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       D. EDUCATION SECTION
+       ======================================================================== -->
+  <section id="education">
+    <div class="container">
+      
+      <div class="section-header">
+        <div class="section-eyebrow">✦ Academic Milestones</div>
+        <h2 class="section-title">My <span class="gradient-text">Education</span></h2>
+        <p class="section-subtitle">Academic foundations in Computer Science supporting my growth as a software professional.</p>
+      </div>
+
+      <div class="education-showcase">
+        <div class="education-main-card">
+          <!-- Degree & University Header -->
+          <div class="education-header-row">
+            <div class="degree-title-block">
+              <div class="degree-icon-box">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                </svg>
+              </div>
+              <div>
+                <h3 class="degree-name">BS Computer Science (BSCS)</h3>
+                <p class="university-name">COMSATS University Islamabad <span class="campus-tag">• Sahiwal Campus</span></p>
+              </div>
+            </div>
+            <div class="semester-badge">
+              <span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--cyan-accent);"></span>
+              <span>Current Status: 4th Semester</span>
+            </div>
+          </div>
+
+          <!-- Relevant Academic Subjects Studied -->
+          <div class="coursework-intro">
+            <span>📚 Key Academic Subjects Studied:</span>
+          </div>
+
+          <div class="coursework-grid">
+            <!-- 1. OOP -->
+            <div class="course-card">
+              <div class="course-header">
+                <span class="course-number">CS-01</span>
+                <h4 class="course-title">Object-Oriented Programming (OOP)</h4>
+              </div>
+              <p class="course-desc">Core paradigm covering classes, encapsulation, inheritance, polymorphism, and abstraction implemented through C++.</p>
+            </div>
+
+            <!-- 2. Data Structures & Algorithms -->
+            <div class="course-card">
+              <div class="course-header">
+                <span class="course-number">CS-02</span>
+                <h4 class="course-title">Data Structures &amp; Algorithms</h4>
+              </div>
+              <p class="course-desc">Algorithmic complexity (Big-O), arrays, linked lists, stacks, queues, trees, graphs, sorting, and efficient data manipulation.</p>
+            </div>
+
+            <!-- 3. Database Systems -->
+            <div class="course-card">
+              <div class="course-header">
+                <span class="course-number">CS-03</span>
+                <h4 class="course-title">Database Systems</h4>
+              </div>
+              <p class="course-desc">Relational database modeling, ER diagrams, normalization (1NF-BCNF), and relational querying with MySQL.</p>
+            </div>
+
+            <!-- 4. Computer Networks -->
+            <div class="course-card">
+              <div class="course-header">
+                <span class="course-number">CS-04</span>
+                <h4 class="course-title">Computer Networks</h4>
+              </div>
+              <p class="course-desc">OSI and TCP/IP models, routing protocols, socket communication, DNS, HTTP/HTTPS client-server architectures.</p>
+            </div>
+
+            <!-- 5. Software Engineering -->
+            <div class="course-card">
+              <div class="course-header">
+                <span class="course-number">CS-05</span>
+                <h4 class="course-title">Software Engineering</h4>
+              </div>
+              <p class="course-desc">Software development lifecycle (SDLC), requirement engineering, UML modeling, system architecture, and QA principles.</p>
+            </div>
+
+            <!-- 6. Web Development -->
+            <div class="course-card">
+              <div class="course-header">
+                <span class="course-number">CS-06</span>
+                <h4 class="course-title">Web Development</h4>
+              </div>
+              <p class="course-desc">Frontend structure, responsive styling, client-side scripting, DOM manipulation, and dynamic web application fundamentals.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       E. SKILLS SECTION
+       ======================================================================== -->
+  <section id="skills">
+    <div class="container">
+      
+      <div class="section-header">
+        <div class="section-eyebrow">✦ Technical Proficiency</div>
+        <h2 class="section-title">Skills &amp; <span class="gradient-text">Technologies</span></h2>
+        <p class="section-subtitle">A balanced toolkit spanning frontend development, foundational programming, and engineering workflows.</p>
+      </div>
+
+      <!-- Category Filter Tabs -->
+      <div class="skills-filter-nav">
+        <button class="skill-filter-btn active" data-filter="all">All Skills</button>
+        <button class="skill-filter-btn" data-filter="frontend">Frontend</button>
+        <button class="skill-filter-btn" data-filter="tools">Programming &amp; Tools</button>
+        <button class="skill-filter-btn" data-filter="core">Core Strengths</button>
+      </div>
+
+      <!-- Skills Grid with Crisp Technology Icons -->
+      <div class="skills-grid" id="skills-container">
+
+        <!-- 1. HTML5 -->
+        <div class="skill-card" data-category="frontend">
+          <div class="skill-icon-wrap">
+            <svg viewBox="0 0 512 512">
+              <path fill="#e34f26" d="M71 460L30 0h452l-41 460-185 52z"/>
+              <path fill="#ef652a" d="M256 472l149-41 35-391H256v432z"/>
+              <path fill="#ebebeb" d="M256 176h-84l-6-68h90V46H130l18 202h108zm0 136h-82l-5-60h-68l11 120h144zm0 102v-58l-1 1-65-18-4-49h-68l8 97 130 36z"/>
+              <path fill="#ffffff" d="M256 176v68h82l-8 88-74 20v59l130-36 18-202H256zm0-130v62h126l6-62H256z"/>
+            </svg>
+          </div>
+          <h3 class="skill-name">HTML5</h3>
+          <span class="skill-category-badge">Frontend</span>
+        </div>
+
+        <!-- 2. CSS3 -->
+        <div class="skill-card" data-category="frontend">
+          <div class="skill-icon-wrap">
+            <svg viewBox="0 0 512 512">
+              <path fill="#1572b6" d="M71 460L30 0h452l-41 460-185 52z"/>
+              <path fill="#33a9dc" d="M256 472l149-41 35-391H256v432z"/>
+              <path fill="#ebebeb" d="M256 208h-84l-6-68h90V78H130l18 202h108zm0 136h-82l-5-60h-68l11 120h144zm0 102v-58l-1 1-65-18-4-49h-68l8 97 130 36z"/>
+              <path fill="#ffffff" d="M256 208v68h82l-8 88-74 20v59l130-36 18-202H256zm0-130v62h126l6-62H256z"/>
+            </svg>
+          </div>
+          <h3 class="skill-name">CSS3</h3>
+          <span class="skill-category-badge">Frontend</span>
+        </div>
+
+        <!-- 3. JavaScript -->
+        <div class="skill-card" data-category="frontend">
+          <div class="skill-icon-wrap">
+            <svg viewBox="0 0 630 630">
+              <rect width="630" height="630" fill="#f7df1e" rx="100"/>
+              <path d="M423.2 492.19c12.69 20.72 29.2 35.95 58.4 35.95 24.53 0 40.2-12.26 40.2-29.2 0-20.3-16.1-27.49-43.1-39.3l-14.8-6.35c-42.72-18.2-71.1-41-71.1-89.2 0-44.4 33.83-77.8 87.1-77.8 38.05 0 65.1 14.8 84.15 48.63l-41.9 26.63c-9.3-16.5-21.6-23.7-42.25-23.7-18.6 0-30.88 11.84-30.88 26.2 0 18.2 11.4 25.4 37.6 36.8l14.8 6.35c50.7 21.6 77.8 43.5 77.8 91.75 0 52-41 81.6-96.8 81.6-54.1 0-88.8-27-106.6-61.7zm-209.9 5.5c8.9 15.6 17.3 28.7 37.2 28.7 18.6 0 30.4-7.6 30.4-36.8V297.8h52.8v192c0 57.5-33.8 84.15-81.2 84.15-43.9 0-69.8-23.2-83.3-51.2z"/>
+            </svg>
+          </div>
+          <h3 class="skill-name">JavaScript</h3>
+          <span class="skill-category-badge">Frontend</span>
+        </div>
+
+        <!-- 4. React -->
+        <div class="skill-card" data-category="frontend">
+          <div class="skill-icon-wrap">
+            <svg viewBox="-11.5 -10.23174 23 20.46348">
+              <circle cx="0" cy="0" r="2.05" fill="#61dafb"/>
+              <g stroke="#61dafb" stroke-width="1" fill="none">
+                <ellipse rx="11" ry="4.2"/>
+                <ellipse rx="11" ry="4.2" transform="rotate(60)"/>
+                <ellipse rx="11" ry="4.2" transform="rotate(120)"/>
+              </g>
+            </svg>
+          </div>
+          <h3 class="skill-name">React</h3>
+          <span class="skill-category-badge">Frontend</span>
+        </div>
+
+        <!-- 5. Bootstrap -->
+        <div class="skill-card" data-category="frontend">
+          <div class="skill-icon-wrap">
+            <svg viewBox="0 0 512 512">
+              <path fill="#7952b3" d="M414.11 24C468.17 24 512 67.83 512 121.89v268.22C512 444.17 468.17 488 414.11 488H97.89C43.83 488 0 444.17 0 390.11V121.89C0 67.83 43.83 24 97.89 24h316.22z"/>
+              <path fill="#ffffff" d="M298.1 278.4c17.5-9.6 28.5-27.1 28.5-49.3 0-38.6-30.8-63.5-78.7-63.5h-94.8v222.8h98.8c49.9 0 83.3-24.9 83.3-67.4 0-21.7-12.7-39.4-37.1-42.6zm-89.9-67.4h37.7c22.5 0 35.8 10.9 35.8 29.5 0 19.3-13.3 30.2-35.8 30.2h-37.7V211zm44.2 131.6h-44.2v-51.4h44.2c25.4 0 40.2 11.2 40.2 32.3 0 20.2-14.8 19.1-40.2 19.1z"/>
+            </svg>
+          </div>
+          <h3 class="skill-name">Bootstrap</h3>
+          <span class="skill-category-badge">Frontend</span>
+        </div>
+
+        <!-- 6. Tailwind CSS -->
+        <div class="skill-card" data-category="frontend">
+          <div class="skill-icon-wrap">
+            <svg viewBox="0 0 512 512">
+              <path fill="#38bdf8" d="M256 128c-68 0-110.5 34-127.5 102 25.5-34 55.2-46.8 89.2-38.2 19.5 4.9 33.4 19 48.8 34.7C291.5 252 320 281 384 281c68 0 110.5-34 127.5-102-25.5 34-55.2 46.8-89.2 38.2-19.5-4.9-33.4-19-48.8-34.7C348.5 157 320 128 256 128zm-128 153c-68 0-110.5 34-127.5 102 25.5-34 55.2-46.8 89.2-38.2 19.5 4.9 33.4 19 48.8 34.7C163.5 405 192 434 256 434c68 0 110.5-34 127.5-102-25.5 34-55.2 46.8-89.2 38.2-19.5-4.9-33.4-19-48.8-34.7C220.5 310 192 281 128 281z"/>
+            </svg>
+          </div>
+          <h3 class="skill-name">Tailwind CSS</h3>
+          <span class="skill-category-badge">Frontend</span>
+        </div>
+
+        <!-- 7. C++ -->
+        <div class="skill-card" data-category="tools">
+          <div class="skill-icon-wrap">
+            <svg viewBox="0 0 512 512">
+              <path fill="#00599c" d="M256 0l221.7 128v256L256 512 34.3 384V128z"/>
+              <path fill="#ffffff" d="M256 130c-69.6 0-126 56.4-126 126s56.4 126 126 126c48.8 0 91.2-27.7 112-68l-54.8-24.8c-11.8 22.8-35.4 38.4-62.8 38.4-38.6 0-70-31.4-70-70s31.4-70 70-70c27.4 0 51 15.6 62.8 38.4L368 201.2C347.2 160.9 304.8 130 256 130zm130 100h20v-20h20v20h20v20h-20v20h-20v-20h-20zm70 0h20v-20h20v20h20v20h-20v20h-20v-20h-20z"/>
+            </svg>
+          </div>
+          <h3 class="skill-name">C++</h3>
+          <span class="skill-category-badge">Programming</span>
+        </div>
+
+        <!-- 8. PHP -->
+        <div class="skill-card" data-category="tools">
+          <div class="skill-icon-wrap">
+            <svg viewBox="0 0 512 512">
+              <path fill="#777bb4" d="M256 64C150 64 64 150 64 256s86 192 192 192 192-86 192-192S362 64 256 64z"/>
+              <path fill="#ffffff" d="M190 270c-2.4 15.5-12 25-28.5 25h-15l10.8-68h16.2c16.5 0 24 9.5 21.6 25-1.4 9-7.2 15-15.1 18zm40-78h-48l-23 146h32l6.5-41h16c27 0 45-16.5 49-41.5 4-25.5-10-43.5-32.5-43.5zm115 78c-2.4 15.5-12 25-28.5 25h-15l10.8-68h16.2c16.5 0 24 9.5 21.6 25-1.4 9-7.2 15-15.1 18zm40-78h-48l-23 146h32l6.5-41h16c27 0 45-16.5 49-41.5 4-25.5-10-43.5-32.5-43.5zm-140 0h-32l-23 146h32l8-51h25l-8 51h32l23-146h-32l-7 44h-25z"/>
+            </svg>
+          </div>
+          <h3 class="skill-name">PHP</h3>
+          <span class="skill-category-badge">Backend</span>
+        </div>
+
+        <!-- 9. MySQL -->
+        <div class="skill-card" data-category="tools">
+          <div class="skill-icon-wrap">
+            <svg viewBox="0 0 512 512">
+              <path fill="#00758f" d="M256 32C132.3 32 32 132.3 32 256s100.3 224 224 224 224-100.3 224-224S379.7 32 256 32z"/>
+              <path fill="#f29111" d="M380 230c-25-15-55-10-75 10-15 15-20 40-15 60-35-15-75 0-90 30-10 20-5 45 10 60 15 15 40 20 60 10 20-10 30-35 25-55 35 10 75-5 85-40 5-25-5-55-25-70z"/>
+              <path fill="#ffffff" d="M220 280c-15-10-35-5-45 10-10 15-5 35 10 45 15 10 35 5 45-10 10-15 5-35-10-45z"/>
+            </svg>
+          </div>
+          <h3 class="skill-name">MySQL</h3>
+          <span class="skill-category-badge">Database</span>
+        </div>
+
+        <!-- 10. Git -->
+        <div class="skill-card" data-category="tools">
+          <div class="skill-icon-wrap">
+            <svg viewBox="0 0 512 512">
+              <path fill="#f05032" d="M504 235L277 8c-10-10-27-10-38 0L8 235c-10 10-10 27 0 38l227 227c10 10 27 10 38 0l227-227c11-10 11-27 4-38z"/>
+              <path fill="#ffffff" d="M366 288c-14-1-26 7-32 19l-58-58c3-8 5-16 5-25 0-9-2-17-5-25l56-56c6 4 14 7 22 7 21 0 38-17 38-38s-17-38-38-38-38 17-38 38c0 9 3 17 8 23l-55 55c-8-3-17-5-26-5-9 0-18 2-26 5L150 123c2-5 3-11 3-17 0-21-17-38-38-38s-38 17-38 38 17 38 38 38c6 0 11-1 16-4l67 67c-3 8-5 16-5 25 0 9 2 17 5 25l-67 67c-5-3-10-4-16-4-21 0-38 17-38 38s17 38 38 38 38-17 38-38c0-6-1-11-4-16l67-67c8 3 16 5 25 5 9 0 18-2 26-5l57 57c-2 5-3 10-3 16 0 21 17 38 38 38s38-17 38-38-17-38-38-38z"/>
+            </svg>
+          </div>
+          <h3 class="skill-name">Git</h3>
+          <span class="skill-category-badge">Version Control</span>
+        </div>
+
+        <!-- 11. GitHub -->
+        <div class="skill-card" data-category="tools">
+          <div class="skill-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="#f8fafc">
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+            </svg>
+          </div>
+          <h3 class="skill-name">GitHub</h3>
+          <span class="skill-category-badge">Collaboration</span>
+        </div>
+
+        <!-- 12. Visual Studio Code -->
+        <div class="skill-card" data-category="tools">
+          <div class="skill-icon-wrap">
+            <svg viewBox="0 0 512 512">
+              <path fill="#007acc" d="M380.6 22.8L281.3 118 163.5 16.5 101.4 57l102.7 94.6L101.4 246.2l62.1 40.5 117.8-101.5 99.3 95.2L480 231.2V71.8z" transform="translate(16, 100) scale(0.9)"/>
+            </svg>
+          </div>
+          <h3 class="skill-name">VS Code</h3>
+          <span class="skill-category-badge">Development Tool</span>
+        </div>
+
+        <!-- 13. Figma -->
+        <div class="skill-card" data-category="tools">
+          <div class="skill-icon-wrap">
+            <svg viewBox="0 0 38 57">
+              <path fill="#1abcfe" d="M19 28.5a9.5 9.5 0 1 1 19 0 9.5 9.5 0 0 1-19 0z"/>
+              <path fill="#0acf83" d="M0 47.5A9.5 9.5 0 0 1 9.5 38H19v9.5a9.5 9.5 0 1 1-19 0z"/>
+              <path fill="#ff7262" d="M19 0v19h9.5a9.5 9.5 0 1 0 0-19H19z"/>
+              <path fill="#f24e1e" d="M0 9.5A9.5 9.5 0 0 0 9.5 19H19V0H9.5A9.5 9.5 0 0 0 0 9.5z"/>
+              <path fill="#a259ff" d="M0 28.5A9.5 9.5 0 0 0 9.5 38H19V19H9.5A9.5 9.5 0 0 0 0 28.5z"/>
+            </svg>
+          </div>
+          <h3 class="skill-name">Figma</h3>
+          <span class="skill-category-badge">UI/UX Tool</span>
+        </div>
+
+        <!-- 14. Responsive Web Design -->
+        <div class="skill-card" data-category="core">
+          <div class="skill-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#00d2ff" stroke-width="2">
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+          </div>
+          <h3 class="skill-name">Responsive Design</h3>
+          <span class="skill-category-badge">Core Strength</span>
+        </div>
+
+        <!-- 15. UI/UX Fundamentals -->
+        <div class="skill-card" data-category="core">
+          <div class="skill-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#a855f7" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+              <path d="M2 12h20"></path>
+            </svg>
+          </div>
+          <h3 class="skill-name">UI/UX Fundamentals</h3>
+          <span class="skill-category-badge">Design Principle</span>
+        </div>
+
+        <!-- 16. Debugging -->
+        <div class="skill-card" data-category="core">
+          <div class="skill-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2">
+              <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"></path>
+            </svg>
+          </div>
+          <h3 class="skill-name">Debugging</h3>
+          <span class="skill-category-badge">Troubleshooting</span>
+        </div>
+
+        <!-- 17. Problem-Solving -->
+        <div class="skill-card" data-category="core">
+          <div class="skill-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2">
+              <path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 1 1 7.072 0l-.548.547A3.374 3.374 0 0 0 14 18.469V19a2 2 0 1 1-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+            </svg>
+          </div>
+          <h3 class="skill-name">Problem-Solving</h3>
+          <span class="skill-category-badge">Analytical</span>
+        </div>
+
+        <!-- 18. Teamwork -->
+        <div class="skill-card" data-category="core">
+          <div class="skill-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#3b82f6" stroke-width="2">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <h3 class="skill-name">Teamwork</h3>
+          <span class="skill-category-badge">Collaboration</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       F. PROJECTS SECTION (EXACTLY 4 FEATURED PROJECTS)
+       ======================================================================== -->
+  <section id="projects">
+    <div class="container">
+      
+      <div class="section-header">
+        <div class="section-eyebrow">✦ Practical Work &amp; Concepts</div>
+        <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+        <p class="section-subtitle">Real web applications and responsive concepts built to demonstrate modern frontend engineering.</p>
+      </div>
+
+      <div class="projects-grid">
+        
+        <!-- PROJECT 1: AgroMart -->
+        <article class="project-card">
+          <div class="project-thumb-box">
+            <img src="assets/images/projects/agromart.svg" alt="AgroMart E-Commerce Platform Preview" class="project-thumb-img" loading="lazy">
+            <span class="project-category-tag">Agricultural E-Commerce Website</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">AgroMart</h3>
+            <p class="project-desc">
+              An online platform concept for agricultural products, including fertilizers, sprays, and related supplies. Features category filtering, product showcases, and a streamlined ordering flow.
+            </p>
+            <div class="project-tech-tags">
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">CSS3</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">E-Commerce UI</span>
+            </div>
+            <div class="project-footer-actions">
+              <button class="btn-project-view" data-project="agromart">
+                <span>View Details</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </button>
+              <button class="btn-project-demo" onclick="showToast('AgroMart demo preview available in project details.')">
+                <span>Overview</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 2: Weather App -->
+        <article class="project-card">
+          <div class="project-thumb-box">
+            <img src="assets/images/projects/weather-app.svg" alt="Weather Web Application Preview" class="project-thumb-img" loading="lazy">
+            <span class="project-category-tag">Weather Web Application</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Weather App</h3>
+            <p class="project-desc">
+              A weather application concept featuring city search, current weather information, temperature, and weather conditions powered by legitimate meteorological APIs with real-time error handling.
+            </p>
+            <div class="project-tech-tags">
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">Open-Meteo API</span>
+              <span class="tech-tag">Async/Await</span>
+              <span class="tech-tag">Responsive UI</span>
+            </div>
+            <div class="project-footer-actions">
+              <button class="btn-project-view" data-project="weather-app">
+                <span>View Details</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </button>
+              <!-- Interactive Live Demo Trigger -->
+              <button class="btn-project-demo open-weather-demo-btn" style="background:var(--brand-gradient);color:#fff;border-color:transparent;">
+                <span>⚡ Live Demo</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 3: Personal Portfolio -->
+        <article class="project-card">
+          <div class="project-thumb-box">
+            <img src="assets/images/projects/portfolio-preview.svg" alt="Personal Portfolio Website Preview" class="project-thumb-img" loading="lazy">
+            <span class="project-category-tag">Frontend Development</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">Personal Portfolio</h3>
+            <p class="project-desc">
+              A responsive personal portfolio built to present my skills, education, and projects with dark/light theme switching, glowing aesthetic, and accessible semantic architecture.
+            </p>
+            <div class="project-tech-tags">
+              <span class="tech-tag">HTML5</span>
+              <span class="tech-tag">CSS3 Variables</span>
+              <span class="tech-tag">Vanilla JS</span>
+              <span class="tech-tag">UI/UX Design</span>
+            </div>
+            <div class="project-footer-actions">
+              <button class="btn-project-view" data-project="portfolio">
+                <span>View Details</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </button>
+              <a href="#hero" class="btn-project-demo">
+                <span>Current Site</span>
+              </a>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 4: PetCare -->
+        <article class="project-card">
+          <div class="project-thumb-box">
+            <img src="assets/images/projects/petcare.svg" alt="PetCare Website Concept Preview" class="project-thumb-img" loading="lazy">
+            <span class="project-category-tag">Pet Care Website</span>
+          </div>
+          <div class="project-body">
+            <h3 class="project-title">PetCare</h3>
+            <p class="project-desc">
+              A responsive website concept for pet-care services, with service sections, healthcare package details, veterinary profiles, and attractive visual presentation.
+            </p>
+            <div class="project-tech-tags">
+              <span class="tech-tag">UI/UX</span>
+              <span class="tech-tag">CSS Grid/Flexbox</span>
+              <span class="tech-tag">JavaScript</span>
+              <span class="tech-tag">Mobile-First</span>
+            </div>
+            <div class="project-footer-actions">
+              <button class="btn-project-view" data-project="petcare">
+                <span>View Details</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </button>
+              <button class="btn-project-demo" onclick="showToast('PetCare concept overview available in project details.')">
+                <span>Overview</span>
+              </button>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       G. CONTACT SECTION
+       ======================================================================== -->
+  <section id="contact">
+    <div class="container">
+      
+      <div class="section-header">
+        <div class="section-eyebrow">✦ Direct Collaboration</div>
+        <h2 class="section-title">Get In <span class="gradient-text">Touch</span></h2>
+        <p class="section-subtitle">Have questions or want to collaborate? Reach out directly via WhatsApp, email, or send a message below.</p>
+      </div>
+
+      <div class="contact-grid">
+        
+        <!-- Left: Direct Contact Information Box -->
+        <div class="contact-details-box">
+          <h3 class="contact-details-title">Let's Connect</h3>
+          <p class="contact-details-intro">
+            I am currently open to frontend development collaborations, academic inquiries, and discussions regarding modern web engineering.
+          </p>
+
+          <div class="contact-channels-list">
+            <!-- WhatsApp / Phone -->
+            <div class="contact-channel-item">
+              <div class="channel-icon-wrap">
+                <svg viewBox="0 0 24 24">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div class="channel-content">
+                <span class="channel-label">Phone &amp; WhatsApp</span>
+                <a href="tel:03120640282" class="channel-value">0312-0640282</a>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="contact-channel-item">
+              <div class="channel-icon-wrap">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="channel-content">
+                <span class="channel-label">Student Email</span>
+                <a href="mailto:sp25-bcs-152@students.cuisahiwal" class="channel-value">sp25-bcs-152@students.cuisahiwal</a>
+              </div>
+            </div>
+
+            <!-- Location -->
+            <div class="contact-channel-item">
+              <div class="channel-icon-wrap">
+                <svg viewBox="0 0 24 24">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="channel-content">
+                <span class="channel-label">City &amp; Country</span>
+                <span class="channel-value">Sahiwal, Punjab, Pakistan</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick WhatsApp Direct Action -->
+          <a href="https://wa.me/923120640282?text=Hello%20Muhammad%20Zohaib,%20I%20viewed%20your%20portfolio..." target="_blank" rel="noopener noreferrer" class="whatsapp-direct-btn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+            <span>Message on WhatsApp</span>
+          </a>
+
+          <!-- Copy Email Action -->
+          <button class="btn btn-secondary" style="width:100%;margin-top:12px;font-size:0.9rem;" onclick="copyToClipboard('sp25-bcs-152@students.cuisahiwal', 'Copied student email to clipboard!')">
+            <span>📋 Copy Email Address</span>
+          </button>
+        </div>
+
+        <!-- Right: Contact Form -->
+        <div class="contact-form-box">
+          <form id="contact-form" novalidate>
+            <!-- Name -->
+            <div class="form-group">
+              <label for="contact-name" class="form-label">Your Name</label>
+              <input type="text" id="contact-name" class="form-input" placeholder="e.g. Ali Ahmed" required>
+              <span class="form-error-msg">Please provide your name.</span>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+              <label for="contact-email" class="form-label">Your Email</label>
+              <input type="email" id="contact-email" class="form-input" placeholder="e.g. name@example.com" required>
+              <span class="form-error-msg">Please enter a valid email address.</span>
+            </div>
+
+            <!-- Subject -->
+            <div class="form-group">
+              <label for="contact-subject" class="form-label">Subject</label>
+              <input type="text" id="contact-subject" class="form-input" placeholder="Project Inquiry / Frontend Collaboration" required>
+              <span class="form-error-msg">Please provide a subject.</span>
+            </div>
+
+            <!-- Message -->
+            <div class="form-group">
+              <label for="contact-message" class="form-label">Message</label>
+              <textarea id="contact-message" class="form-textarea" placeholder="Write your message here..." required></textarea>
+              <span class="form-error-msg">Message must contain at least 10 characters.</span>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width:100%;">
+              <span>Send Message</span>
+              <svg class="btn-icon" viewBox="0 0 24 24">
+                <line x1="22" y1="2" x2="11" y2="13"></line>
+                <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+              </svg>
+            </button>
+
+            <p class="form-note">
+              🛡️ <em>Genuine Fallback:</em> Submitting will format your message and connect directly to your email client (or allow one-click copying) addressed to <code>sp25-bcs-152@students.cuisahiwal</code>.
+            </p>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       H. FOOTER
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      
+      <div class="footer-top-row">
+        <div class="footer-brand">
+          <div class="footer-name">
+            <span class="mz-logo-badge" style="width:32px;height:32px;font-size:0.9rem;">MZ</span>
+            <span>Muhammad Zohaib</span>
+          </div>
+          <span class="footer-role">Frontend Developer • BSCS Student @ COMSATS University Sahiwal</span>
+        </div>
+
+        <!-- Social Links in Footer -->
+        <div class="social-icons-row">
+          <a href="https://github.com/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="GitHub">
+            <svg viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          </a>
+          <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="YouTube">
+            <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Facebook">
+            <svg viewBox="0 0 24 24"><path d="M22.675 0h-21.35C.597 0 0 .597 0 1.326v21.348C0 23.403.597 24 1.326 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.597 1.323-1.326V1.326C24 .597 23.403 0 22.675 0z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+          </a>
+          <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="TikTok">
+            <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.24 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-bottom-row">
+        <div class="footer-tagline">Better Code ✦ Better Tomorrow</div>
+        <div class="footer-copy">
+          &copy; <span id="current-year">2026</span> Muhammad Zohaib. All rights reserved.
+        </div>
+        <button id="back-to-top-btn" class="back-to-top-btn" aria-label="Back to Top">
+          <span>Back to Top</span>
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="18 15 12 9 6 15"></polyline></svg>
+        </button>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       MODALS & OVERLAYS
+       ======================================================================== -->
+
+  <!-- 1. Project Details Modal -->
+  <div id="project-modal-overlay" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <button id="project-modal-close" class="modal-close-btn" aria-label="Close dialog">✕</button>
+      <div style="margin-bottom: 20px;">
+        <span id="modal-project-category" class="project-category-tag" style="position:static;display:inline-block;margin-bottom:10px;">Category</span>
+        <h3 id="modal-project-title" style="font-size:1.8rem;font-weight:800;color:var(--text-primary);margin-bottom:6px;">Project Title</h3>
+      </div>
+      <div style="border-radius:var(--radius-md);overflow:hidden;margin-bottom:20px;border:1px solid var(--border-subtle);background:var(--bg-tertiary);">
+        <img id="modal-project-img" src="" alt="Project Visual Preview" style="width:100%;height:auto;display:block;">
+      </div>
+      <p id="modal-project-desc" style="font-size:0.98rem;color:var(--text-secondary);line-height:1.7;margin-bottom:20px;">Detailed project overview description.</p>
+      
+      <div style="margin-bottom: 20px;">
+        <h4 style="font-size:0.95rem;font-weight:700;color:var(--text-primary);margin-bottom:10px;">Technologies Utilized</h4>
+        <div id="modal-project-tags" class="project-tech-tags"></div>
+      </div>
+
+      <div style="margin-bottom: 24px;">
+        <h4 style="font-size:0.95rem;font-weight:700;color:var(--text-primary);margin-bottom:10px;">Key Architectural Highlights</h4>
+        <ul id="modal-project-features" style="font-size:0.9rem;color:var(--text-secondary);display:flex;flex-direction:column;gap:8px;"></ul>
+      </div>
+
+      <div style="display:flex;justify-content:flex-end;gap:12px;padding-top:16px;border-top:1px solid var(--border-subtle);">
+        <a id="modal-project-link" href="#" class="btn btn-primary" style="padding:10px 24px;">Explore Project</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Live Weather Application Interactive Demo Modal -->
+  <div id="weather-modal-overlay" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-card">
+      <button id="weather-modal-close" class="modal-close-btn" aria-label="Close dialog">✕</button>
+      <div style="margin-bottom: 16px;">
+        <span class="project-category-tag" style="position:static;display:inline-block;margin-bottom:8px;">Live API Integration</span>
+        <h3 style="font-size:1.6rem;font-weight:800;color:var(--text-primary);">Interactive Weather Demonstration</h3>
+        <p style="font-size:0.9rem;color:var(--text-secondary);">Query live meteorological conditions for any city worldwide using legitimate Open-Meteo REST endpoints.</p>
+      </div>
+
+      <div class="weather-demo-box">
+        <!-- Search bar -->
+        <div class="weather-search-bar">
+          <input type="text" id="weather-city-input" class="weather-search-input" placeholder="Type city name, e.g. Sahiwal, Lahore, Islamabad, Tokyo" value="Sahiwal">
+          <button id="weather-search-submit" class="weather-search-btn">Search</button>
+        </div>
+
+        <!-- Quick chips -->
+        <div class="weather-quick-chips">
+          <span style="font-size:0.8rem;color:var(--text-muted);align-self:center;margin-right:4px;">Quick select:</span>
+          <button class="weather-chip weather-quick-chip" data-city="Sahiwal">📍 Sahiwal</button>
+          <button class="weather-chip weather-quick-chip" data-city="Lahore">Lahore</button>
+          <button class="weather-chip weather-quick-chip" data-city="Islamabad">Islamabad</button>
+          <button class="weather-chip weather-quick-chip" data-city="Karachi">Karachi</button>
+          <button class="weather-chip weather-quick-chip" data-city="London">London</button>
+        </div>
+
+        <!-- Result Box -->
+        <div id="weather-live-result" class="weather-result-display">
+          <span style="color:var(--text-muted);font-size:0.9rem;">Type a city or select a chip to retrieve live weather data.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Contact Form Submission Confirmation Modal -->
+  <div id="contact-confirm-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-card" style="max-width:540px;">
+      <button id="contact-confirm-close" class="modal-close-btn" aria-label="Close dialog">✕</button>
+      <div style="text-align:center;margin-bottom:20px;">
+        <div style="width:54px;height:54px;border-radius:50%;background:var(--bg-badge);border:1px solid var(--border-glow);color:var(--cyan-accent);font-size:1.8rem;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;">✉️</div>
+        <h3 style="font-size:1.45rem;font-weight:800;color:var(--text-primary);margin-bottom:6px;">Message Ready to Send</h3>
+        <p style="font-size:0.88rem;color:var(--text-secondary);">Your message has been validated and formatted. Since this static portfolio runs without an arbitrary external backend, choose your preferred method below:</p>
+      </div>
+
+      <div id="contact-confirm-preview" style="background:var(--bg-tertiary);border:1px solid var(--border-subtle);border-radius:var(--radius-md);padding:16px;font-size:0.86rem;margin-bottom:24px;line-height:1.6;"></div>
+
+      <div style="display:flex;flex-direction:column;gap:10px;">
+        <button id="btn-open-email-client" class="btn btn-primary" style="width:100%;">
+          <span>🚀 Open in Default Email Client (Mailto)</span>
+        </button>
+        <button id="btn-copy-formatted-msg" class="btn btn-secondary" style="width:100%;">
+          <span>📋 Copy Message to Clipboard</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
