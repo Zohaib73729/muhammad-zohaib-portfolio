@@ -484,20 +484,41 @@ function initWeatherDemo() {
 }
 
 /* ==========================================================================
-   7. CONTACT FORM & DIRECT EMAIL BRIDGE
+   7. CONTACT FORM & FIREBASE FIRESTORE DATABASE INTEGRATION
    ========================================================================== */
 function initContactForm() {
   const form = document.getElementById('contact-form');
+  const submitBtn = document.getElementById('contact-submit-btn');
   const confirmModal = document.getElementById('contact-confirm-modal');
   const confirmClose = document.getElementById('contact-confirm-close');
   const btnTriggerMailto = document.getElementById('btn-open-email-client');
   const btnCopyMessage = document.getElementById('btn-copy-formatted-msg');
   const previewBox = document.getElementById('contact-confirm-preview');
 
+  let db = null;
+  const fbConfig = PORTFOLIO_CONFIG.firebase;
+  const isFirebaseConfigured = fbConfig && 
+                               fbConfig.apiKey && 
+                               fbConfig.apiKey !== "YOUR_API_KEY" && 
+                               fbConfig.projectId && 
+                               fbConfig.projectId !== "YOUR_PROJECT_ID";
+
+  if (isFirebaseConfigured && typeof firebase !== 'undefined') {
+    try {
+      if (!firebase.apps.length) {
+        firebase.initializeApp(fbConfig);
+      }
+      db = firebase.firestore();
+      console.log("Firebase Firestore initialized successfully.");
+    } catch (err) {
+      console.warn("Firebase initialization notice:", err);
+    }
+  }
+
   let activeMessageData = null;
 
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       const nameInput = document.getElementById('contact-name');
@@ -552,22 +573,88 @@ function initContactForm() {
         recipient: PORTFOLIO_CONFIG.personal.email
       };
 
-      // Populate confirmation modal preview
-      if (previewBox) {
-        previewBox.innerHTML = `
-          <strong>To:</strong> ${activeMessageData.recipient}<br>
-          <strong>From:</strong> ${name} (${email})<br>
-          <strong>Subject:</strong> ${subject}<br><br>
-          <div style="background:var(--bg-secondary);padding:12px;border-radius:8px;border:1px solid var(--border-subtle);white-space:pre-wrap;font-size:0.88rem;color:var(--text-secondary);">${message}</div>
-        `;
-      }
+      // If Firebase Firestore is active, save directly to Database!
+      if (db) {
+        const originalBtnHTML = submitBtn ? submitBtn.innerHTML : "";
+        if (submitBtn) {
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = `<span>Saving to Database...</span>`;
+        }
 
-      // Open transparent confirmation modal
-      if (confirmModal) {
-        confirmModal.classList.add('active');
-        document.body.style.overflow = 'hidden';
+        try {
+          await db.collection("messages").add({
+            name: name,
+            email: email,
+            subject: subject,
+            message: message,
+            createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+            status: "unread"
+          });
+
+          form.reset();
+          showToast("Message saved to Firebase database successfully! 🎉");
+
+          if (previewBox) {
+            previewBox.innerHTML = `
+              <div style="text-align:center;padding:10px 0;">
+                <p style="color:#10b981;font-weight:700;font-size:1.15rem;margin-bottom:8px;">✅ Message Received &amp; Stored!</p>
+                <p style="color:var(--text-secondary);font-size:0.92rem;line-height:1.6;">Thank you, <strong>${name}</strong>! Your inquiry has been recorded directly in Muhammad Zohaib's database. He will get back to you at <strong>${email}</strong> shortly.</p>
+              </div>
+            `;
+          }
+
+          if (confirmModal) {
+            const modalTitle = confirmModal.querySelector('h3');
+            if (modalTitle) modalTitle.textContent = "Message Delivered!";
+            const modalDesc = confirmModal.querySelector('p');
+            if (modalDesc) modalDesc.textContent = "Your message has been directly submitted to the database.";
+            
+            // Hide the mailto buttons in success mode
+            const actionButtons = confirmModal.querySelectorAll('#btn-open-email-client, #btn-copy-formatted-msg');
+            actionButtons.forEach(btn => btn.style.display = 'none');
+
+            confirmModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+          }
+        } catch (dbError) {
+          console.error("Firestore Save Error:", dbError);
+          showToast("Database busy. Opening email fallback...");
+          fallbackToModal(activeMessageData);
+        } finally {
+          if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnHTML;
+          }
+        }
+      } else {
+        // Fallback when Firebase credentials are not yet configured
+        fallbackToModal(activeMessageData);
       }
     });
+  }
+
+  function fallbackToModal(data) {
+    if (previewBox) {
+      previewBox.innerHTML = `
+        <strong>To:</strong> ${data.recipient}<br>
+        <strong>From:</strong> ${data.name} (${data.email})<br>
+        <strong>Subject:</strong> ${data.subject}<br><br>
+        <div style="background:var(--bg-secondary);padding:12px;border-radius:8px;border:1px solid var(--border-subtle);white-space:pre-wrap;font-size:0.88rem;color:var(--text-secondary);">${data.message}</div>
+      `;
+    }
+
+    if (confirmModal) {
+      const modalTitle = confirmModal.querySelector('h3');
+      if (modalTitle) modalTitle.textContent = "Message Ready to Send";
+      const modalDesc = confirmModal.querySelector('p');
+      if (modalDesc) modalDesc.textContent = "Your message has been validated and formatted. Since Firebase credentials are being connected, choose your preferred method below:";
+      
+      const actionButtons = confirmModal.querySelectorAll('#btn-open-email-client, #btn-copy-formatted-msg');
+      actionButtons.forEach(btn => btn.style.display = 'block');
+
+      confirmModal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
   }
 
   function showError(inputEl, msg) {
